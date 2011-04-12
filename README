@@ -1,21 +1,36 @@
 ArrowWall
 --------------------
-Plugin Developer:
+
+
+Plugin developer:
+--------------------
 overlordnyaldee
 
+
 Description:
+--------------------
 Summon a huge wall of arrows towards your enemies!
 
+
 Usage:
+--------------------
 /aw [arrowsToSpawn]
 
-(The amount of arrows to spawn is optional, it will spawn 10 by default.)
+(The amount of arrows to spawn is optional, it will spawn 10 by default. 
+The plugin is hard limited to 500 arrows at a time due to horrible lag.
+After 5 seconds, the spawned arrows will be removed to improve performance.)
+
 
 Permissions Node:
+--------------------
 arrowwall.aw
 
+
 Thanks to:
+--------------------
 darknesschaos (VoidMage)
 fullwall (Citizens)
+nossr50 (mcMMO)
 
-Without following the example of your awesome plugins this wouldn't haven been possible.
+Without the great example of your awesome plugins, 
+this wouldn't have been possible.
