@@ -26,10 +26,11 @@ public class ArrowWall extends JavaPlugin {
         
         ArrowWallCommandExecutor executor = new ArrowWallCommandExecutor(this);
 		this.getCommand("aw").setExecutor(executor);    
-		//this.getCommand("se").setExecutor(executor);       
 
         PluginDescriptionFile pdfFile = this.getDescription();
         System.out.println( pdfFile.getName() + " version " + pdfFile.getVersion() + " enabled." );
+        
+		Permission.initialize(getServer());
         
     }
     public void onDisable() {
