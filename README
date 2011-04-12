@@ -7,7 +7,7 @@ Description:
 Summon a huge wall of arrows towards your enemies!
 
 Usage:
-/ae [arrowsToSpawn]
+/aw [arrowsToSpawn]
 
 (The amount of arrows to spawn is optional, it will spawn 10 by default.)
 
