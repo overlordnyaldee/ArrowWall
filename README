@@ -1,0 +1,21 @@
+ArrowWall
+--------------------
+Plugin Developer:
+overlordnyaldee
+
+Description:
+Summon a huge wall of arrows towards your enemies!
+
+Usage:
+/ae [arrowsToSpawn]
+
+(The amount of arrows to spawn is optional, it will spawn 10 by default.)
+
+Permissions Node:
+arrowwall.aw
+
+Thanks to:
+darknesschaos (VoidMage)
+fullwall (Citizens)
+
+Without following the example of your awesome plugins this wouldn't haven been possible.

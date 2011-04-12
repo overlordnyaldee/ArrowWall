@@ -1,0 +1,12 @@
+name: ArrowWall
+main: com.amaranthinecorporation.ArrowWall.ArrowWall
+version: 0.3
+commands:
+    aw:
+        description: summons an wall of arrows towards the direction the player is facing
+        usage: |
+                    The command was not recognized. /aw [numberOfArrows]
+#    se:
+#        description: shoots arrows at entities around the player
+#        usage: |
+#                    The command was not recognized. /se [numberOfArrows]
