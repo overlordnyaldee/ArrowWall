@@ -14,16 +14,19 @@ Summon a huge wall of arrows towards your enemies!
 
 Usage:
 --------------------
-/aw [arrowsToSpawn]
+/aw [arrowsToSpawn] - spawns an amount of arrows in the direction you face
+/fw [arrowsToSpawn] - spawns flaming arrows
+/awreload - reloads configuration
 
-(The amount of arrows to spawn is optional, it will spawn 10 by default. 
-The plugin is hard limited to 500 arrows at a time due to horrible lag.
-After 5 seconds, the spawned arrows will be removed to improve performance.)
+(The amount of arrows to spawn is optional, it will spawn 10 without an explicit parameter.
+By default, after 5 seconds, the spawned arrows will be removed to improve performance.)
 
 
 Permissions Node:
 --------------------
 arrowwall.aw
+arrowwall.awreload
+arrowwall.exempt
 
 
 Thanks to:

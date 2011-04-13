@@ -8,10 +8,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 public class ArrowWallUtils {
+	
+	private ArrowWall plugin;
+
+	public ArrowWallUtils(ArrowWall plugin) {
+		this.plugin = plugin;
+	}
 
 	static int radius = 4;
 
-    public static boolean spawnArrows(Player target, int arrowCount) {
+    public boolean spawnArrows(Player target, int arrowCount, boolean onFire) {
     	
 		if (target != null) {
 			
@@ -34,12 +40,22 @@ public class ArrowWallUtils {
 				Vector vec = loc.getDirection();
 				
 				// shoot arrows and add to list of arrows
-				arrows.add(target.getWorld().spawnArrow(loc, vec, (float)1.0, (float)12));				
+				Arrow arrow = target.getWorld().spawnArrow(loc, vec, (float)1.0, (float)12);
+				
+				if (onFire) {
+					arrow.setFireTicks(plugin.cleanupTime);
+				}
+				
+				arrows.add(arrow);		
+				
+				
 			}
 			
-			// schedule a timer to remove the arrows in 5 seconds
-			Timer arrowTimer = new Timer(true);
-			arrowTimer.schedule(new ArrowCleanupTimer(arrows), (long)5000, (long)(5000));
+			if (plugin.useCleanup) {
+				// schedule a timer to remove the arrows in 5 seconds
+				Timer arrowTimer = new Timer(true);
+				arrowTimer.schedule(new ArrowCleanupTimer(arrows), (long)plugin.cleanupTime, (long)(plugin.cleanupTime));
+			}
 			
 			return true;
 	

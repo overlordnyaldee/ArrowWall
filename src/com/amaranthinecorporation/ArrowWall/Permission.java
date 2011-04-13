@@ -13,18 +13,26 @@ public class Permission {
 	
 	private static Permissions permissionsPlugin;
 	private static boolean permissionsEnabled = false;
+	
+	private static ArrowWall plugin;
 
 	public static void initialize(Server server) {
 		Plugin test = server.getPluginManager().getPlugin("Permissions");
-		if (test != null) {
-			Logger log = Logger.getLogger("Minecraft");
+		plugin = (ArrowWall) server.getPluginManager().getPlugin("ArrowWall");
+		Logger log = plugin.log;
+		if ((test != null) && (plugin.usePermissions)) {
 			permissionsPlugin = (Permissions) test;
 			permissionsEnabled = true;
-			log.log(Level.INFO, "[ArrowWall]: Permissions enabled.");
+			log.log(Level.INFO, plugin.logPrefix + "Permissions enabled.");
 		} else {
-			Logger log = Logger.getLogger("Minecraft");
-			log.log(Level.SEVERE,
-					"[ArrowWall]: Permissions isn't loaded, commands can only be used by ops.");
+			if (!plugin.usePermissions){
+				log.log(Level.INFO,
+						plugin.logPrefix + "Permissions not in use, commands can only be used by anyone.");
+			} else {
+				log.log(Level.SEVERE,
+						plugin.logPrefix + "Permissions isn't loaded, commands can only be used by ops.");
+			}
+			
 		}
 	}
 
@@ -49,6 +57,8 @@ public class Permission {
 	public static boolean generic(Player player, String string) {
 		if (permissionsEnabled) {
 			return permission(player, string);
+		} else if (!plugin.usePermissions) {
+			return true;
 		}
 		return player.isOp();
 	}
