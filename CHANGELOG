@@ -1,0 +1,19 @@
+Changelog for ArrowWall
+
+0.4:
+ - added YAML config options
+ - added configuration reload (/awreload) (- 'arrowwall.awreload')
+ - added flaming arrows (/fw)
+ - commands issued over the limit of arrows no longer still execute
+ - added ability to not use Permissions, will cause all players to be able to use commands, if you want only Ops, set permissions to true
+ - added ability to use arrows in inventory, set inventory to true in the config file
+ - exemption from using items in inventory (- 'arrowwall.exempt')
+ 
+0.3:
+ - Added Permissions support, public release
+ 
+0.2:
+ - Added variable arrow amounts
+ 
+0.1:
+ - First release
