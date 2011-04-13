@@ -1,0 +1,5 @@
+TODO for ArrowWall
+
+Add a separate configuration option to enable inventory exemption
+
+Add a multiplier for inventory usage, ex 1 arrow in inventory counts as 4 for /aw
