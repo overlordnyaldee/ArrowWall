@@ -23,12 +23,14 @@ public class ArrowWall extends JavaPlugin {
     
     public ArrowWallConfiguration config;
     
+	public int defaultArrowsToSpawn = 10;
     public int arrowLimit = 500;
     public boolean useCleanup = true;
     public int cleanupTime = 5;
+    //public boolean shootFromSky = false;
     public boolean useInventory = false;
     public boolean usePermissions = true;
-	public int defaultArrowsToSpawn = 10;
+   //public boolean useExemption = true;
 
 
     public void onEnable() {
@@ -36,10 +38,13 @@ public class ArrowWall extends JavaPlugin {
     	config = new ArrowWallConfiguration(this.getDataFolder(), this);
     	config.setupConfiguration();
         config.readConfiguration();
+        Permission.initialize(getServer());
         
         ArrowWallCommandExecutor executor = new ArrowWallCommandExecutor(this);
 		this.getCommand("aw").setExecutor(executor);    
 		this.getCommand("fw").setExecutor(executor);  
+		this.getCommand("aws").setExecutor(executor);    
+		this.getCommand("fws").setExecutor(executor);  
 		this.getCommand("awreload").setExecutor(executor);  
 
         PluginDescriptionFile pdfFile = this.getDescription();

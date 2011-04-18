@@ -1,5 +1,16 @@
 Changelog for ArrowWall
 
+0.5:
+ - added configuration autoupdate functionality
+ - added ability to spawn arrows downwards, where you are looking.
+ - bugfix: inventory use when permissions off
+ - permissions nodes changed, now:
+    arrowwall.aw
+    arrowwall.aw.fw
+    arrowwall.aw.aws
+    arrowwall.aw.fws
+    arrowwall.awreload
+
 0.4:
  - added YAML config options
  - added configuration reload (/awreload) (- 'arrowwall.awreload')

@@ -9,7 +9,15 @@ commands:
     fw:
         description: summons a flaming wall of arrows towards the direction the player is facing
         usage: |
-                    The command was not recognized. /aw [numberOfArrows]
+                    The command was not recognized. /fw [numberOfArrows]
+    aws:
+        description: summons an wall of arrows from the sky at the block the player is looking at
+        usage: |
+                    The command was not recognized. /aws [numberOfArrows]
+    fws:
+        description: summons a flaming wall of arrows from the sky at the block the player is looking at
+        usage: |
+                    The command was not recognized. /fws [numberOfArrows]
     awreload:
         description: reloads ArrowWall config
         usage: |

@@ -17,12 +17,17 @@ public class Permission {
 	private static ArrowWall plugin;
 
 	public static void initialize(Server server) {
-		Plugin test = server.getPluginManager().getPlugin("Permissions");
+		//Plugin test = server.getPluginManager().getPlugin("Permissions");
 		plugin = (ArrowWall) server.getPluginManager().getPlugin("ArrowWall");
 		Logger log = plugin.log;
-		if ((test != null) && (plugin.usePermissions)) {
-			permissionsPlugin = (Permissions) test;
-			permissionsEnabled = true;
+		
+		initializeSilent(server);
+		
+		if ((permissionsEnabled) && (plugin.usePermissions)) {
+
+		//if ((test != null) && (plugin.usePermissions)) {
+			//permissionsPlugin = (Permissions) test;
+			//permissionsEnabled = true;
 			log.log(Level.INFO, plugin.logPrefix + "Permissions enabled.");
 		} else {
 			if (!plugin.usePermissions){
@@ -34,6 +39,15 @@ public class Permission {
 			}
 			
 		}
+	}
+	
+	public static void initializeSilent(Server server) {
+		Plugin test = server.getPluginManager().getPlugin("Permissions");
+		plugin = (ArrowWall) server.getPluginManager().getPlugin("ArrowWall");
+		if ((test != null) && (plugin.usePermissions)) {
+			permissionsPlugin = (Permissions) test;
+			permissionsEnabled = true;
+		} 
 	}
 
 	public static boolean isAdmin(Player player) {
